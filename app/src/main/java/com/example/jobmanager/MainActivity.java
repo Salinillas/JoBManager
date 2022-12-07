@@ -3,9 +3,19 @@ package com.example.jobmanager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+    public void enviar (View view){
+        EditText nombreEditText = findViewById(R.id.nombreEditText);
+        EditText passwordEditText = findViewById(R.id.passwordEditText);
+
+        Log.i("nombre : ", nombreEditText.getText().toString());
+        Log.i("password: ", passwordEditText.getText().toString());
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
