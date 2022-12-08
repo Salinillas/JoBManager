@@ -5,28 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".LoginActivity">
+    tools:context=".UserMenu">
 
-    <EditText
-        android:id="@+id/username1"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="User Name"
-        android:layout_marginTop="50dp"/>
-
-    <EditText
-        android:id="@+id/password1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/username1"/>
+        android:text="Menu Usuario"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="70dp" />
 
     <Button
-        android:id="@+id/btnsignin1"
+        android:id="@+id/ficharentrada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign in"
+        android:text="Fichar Entrada"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/password1"/>
+        android:layout_below="@+id/textView"/>
+
+    <Button
+        android:id="@+id/ficharsalida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ficharentrada"
+        android:layout_marginTop="50dp"
+        android:text="Fichar Salida"/>
+
 </RelativeLayout>
