@@ -26,9 +26,9 @@
         android:id="@+id/btnsignin1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password1"
+        android:text="Entrar"
         android:layout_marginTop="50dp"
-        android:text="Entrar" />
+        android:layout_below="@+id/password1"/>
 
     <Button
         android:id="@+id/btnsignup1"

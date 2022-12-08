@@ -28,35 +28,20 @@ public class UserMenu extends AppCompatActivity {
         setContentView(R.layout.activity_user_menu);
         DB = new DBHelper(this);
         Toast.makeText(UserMenu.this, "La hora actual es: " + fecha, Toast.LENGTH_SHORT).show();
-        //_tvTime.setText(_sdfWatchTime.format(new Date()));
-//        ficharentrada.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-////                if(user.equals("")||pass.equals("")||repass.equals(""))
-////                    Toast.makeText(RegisterActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-////                else{
-////                    if(pass.equals(repass)){
-////                        Boolean checkuser = DB.checkusername(user);
-////                        if(checkuser==false){
-////                            Boolean insert = DB.insertData(user, pass);
-////                            if(insert==true){
-////                                Toast.makeText(RegisterActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-////                                Intent intent = new Intent(getApplicationContext(),UserMenu.class);
-////                                startActivity(intent);
-////                            }else{
-////                                Toast.makeText(RegisterActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
-////                            }
-////                        }
-////                        else{
-////                            Toast.makeText(RegisterActivity.this, "User already exists! please sign in", Toast.LENGTH_SHORT).show();
-////                        }
-////                    }else{
-////                        Toast.makeText(RegisterActivity.this, "Passwords not matching", Toast.LENGTH_SHORT).show();
-////                    }
-////                }
-//            }
-        //});
+        Bundle extras = getIntent().getExtras();
+        String user="";
+        if(extras!=null) user = extras.getString("UserName");
+        String finalUser = user;
+        ficharentrada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(finalUser == "" || DB.getDiff(finalUser)<0)
+                    Toast.makeText(UserMenu.this, "Todavia no has fichado la salida", Toast.LENGTH_SHORT).show();
+                else{
+                    DB.insertEntrada(finalUser, fecha.toString());
+                    Toast.makeText(UserMenu.this, "Acabas de fichar la entrada", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         }
     }
