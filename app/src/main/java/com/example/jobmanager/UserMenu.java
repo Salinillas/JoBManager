@@ -27,7 +27,7 @@ public class UserMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_menu);
         DB = new DBHelper(this);
-        Toast.makeText(UserMenu.this, "la hora es: " + fecha, Toast.LENGTH_SHORT).show();
+        Toast.makeText(UserMenu.this, "La hora actual es: " + fecha, Toast.LENGTH_SHORT).show();
         //_tvTime.setText(_sdfWatchTime.format(new Date()));
 //        ficharentrada.setOnClickListener(new View.OnClickListener() {
 //            @Override

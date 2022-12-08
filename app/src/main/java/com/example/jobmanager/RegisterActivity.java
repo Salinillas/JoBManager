@@ -32,27 +32,27 @@ public class RegisterActivity extends AppCompatActivity {
                 String ofi = oficina.getText().toString();
 
                 if(user.equals("")||pass.equals("")||repass.equals("")||ofi.equals(""))
-                    Toast.makeText(RegisterActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Por favor, cubre todos los campos", Toast.LENGTH_SHORT).show();
                     else if(Integer.parseInt(ofi)<1||Integer.parseInt(ofi)>10) {
-                        Toast.makeText(RegisterActivity.this, "Introduce un número de oficina válida (1-10)", Toast.LENGTH_LONG).show();
+                        Toast.makeText(RegisterActivity.this, "Introduce un número de oficina válido (1-10)", Toast.LENGTH_LONG).show();
                         }else{
                             if(pass.equals(repass)){
                                 Boolean checkuser = DB.checkusername(user);
                                 if(checkuser==false){
                                     Boolean insert = DB.insertData(user, pass, Integer.parseInt(ofi));
                                     if(insert==true){
-                                        Toast.makeText(RegisterActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(),UserMenu.class);
                                         startActivity(intent);
                                     }else{
-                                        Toast.makeText(RegisterActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(RegisterActivity.this, "Registro fallido", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                                 else{
-                                    Toast.makeText(RegisterActivity.this, "User already exists! please sign in", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "El usuario ya existe", Toast.LENGTH_SHORT).show();
                                 }
                             }else{
-                                Toast.makeText(RegisterActivity.this, "Passwords not matching", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

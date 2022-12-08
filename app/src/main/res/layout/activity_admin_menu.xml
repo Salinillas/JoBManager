@@ -4,32 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context=".UserMenu">
+    tools:context=".AdminMenu">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Menú Usuario"
+        android:text="Menú Admin"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="70dp" />
 
     <Button
-        android:id="@+id/ficharentrada"
+        android:id="@+id/gestionarusuarios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fichar Entrada"
+        android:text="Gestionar Usuarios"
         android:layout_marginTop="200dp"
         android:layout_below="@+id/textView"/>
 
     <Button
-        android:id="@+id/ficharsalida"
+        android:id="@+id/monitorizarusuarios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ficharentrada"
+        android:layout_below="@+id/gestionarusuarios"
         android:layout_marginTop="50dp"
-        android:text="Fichar Salida"/>
+        android:text="Monitorizar usuarios"/>
 
 </RelativeLayout>
